@@ -6,8 +6,9 @@
     "server": "cd server && yarn start",
     "build": "cd client && yarn build",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
-    "start": "yarn install && cd client yarn install && cd server yarn install",
-    "heroku-postbuild": "cd client && yarn install && yarn install --only=dev --no-shrinkwrap && yarn build"
+    "installClient": "cd client && yarn install",
+    "installServer": "cd server && yarn install",
+    "start": "\"yarn installClient\" \"yarn installServer\""
   },
   "license": "MIT",
   "devDependencies": {
