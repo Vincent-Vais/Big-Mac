@@ -46,7 +46,6 @@ const getOtherCountryFromArray = (arr) => {
   let i = 0;
   const country = localStorage.getItem("local");
   const storedVisited = JSON.parse(localStorage.getItem("visited"));
-  debugger;
   while (
     arr[i] === country ||
     (storedVisited && Object.keys(storedVisited).includes(arr[i]))
