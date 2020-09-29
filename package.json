@@ -5,10 +5,11 @@
     "client": "cd client && yarn start",
     "server": "cd server && yarn start",
     "build": "cd client && yarn build",
-    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "start": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "installClient": "cd client && yarn install",
     "installServer": "cd server && yarn install",
-    "start": "\"yarn installClient\" \"yarn installServer\""
+    "installDev": "yarn install",
+    "installAll": "yarn installClient && yarn installServer && yarn installDev"
   },
   "license": "MIT",
   "devDependencies": {
