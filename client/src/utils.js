@@ -5,8 +5,12 @@ const YEAR = "2016";
 // API CALLS
 const getCountry = async () => {
   try {
-    const ipResponse = await axios.get(`http://ip-api.com/json/`);
-    return ipResponse.data.country;
+    const ipResponse = await axios.get("http://ip-api.com/json/");
+    const ip = ipResponse.data.query;
+    const countryResp = await axios.get(
+      `https://cors-anywhere.herokuapp.com/https://ipvigilante.com/json/${ip}`
+    );
+    return countryResp.data.data["country_name"];
   } catch (err) {
     throw new Error(err);
   }
